@@ -120,7 +120,7 @@ public class Buzzer extends JFrame
         }
         
         check[c-'a']++;
-        keyString = Character.toString(c);
+        keyString = TeamInfoFrame.team[c-'a'];
         
          
        

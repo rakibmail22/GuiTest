@@ -23,8 +23,15 @@ public class GuiTest {
 	private JPanel teamsPanel;
 	private JPanel teamNumberPanel;
 	public static int teamNumberValue;
-	static JFrame frame;
-	
+	private JFrame frame;
+	public void createAndDefineFrame(){
+		frame = new JFrame("Team Information");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.addComponentsToFrame(frame.getContentPane());
+		frame.pack();
+		frame.setVisible(true);
+		
+	}
 	public void addComponentsToFrame(Container frame){
 		frame.setLayout(new BoxLayout(frame, BoxLayout.Y_AXIS));
 		processTeamNumberPanels();
@@ -79,11 +86,8 @@ public class GuiTest {
 	
 	
 	public static void createAndShowGUI(GuiTest test) {
-		frame = new JFrame("Team Information");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		test.addComponentsToFrame(frame.getContentPane());
-		frame.pack();
-		frame.setVisible(true);
+		test.createAndDefineFrame();
+		
 	}
 	
 	public static void main(String[] args){
